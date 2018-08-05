@@ -10,4 +10,9 @@ class SessionsController < ApplicationController
   def destroy
     session.delete :username
   end
+
+  def hello
+    redirect_to controller: 'sessions', action: 'new' unless session[:name]
+  end
+
 end
